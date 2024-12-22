@@ -1,4 +1,4 @@
-# PDF Summariser 🤖🇦🇮📖
+# PDF Summariser 🤖📖
 
 
 ## Description  
