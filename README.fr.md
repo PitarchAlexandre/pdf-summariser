@@ -1,4 +1,5 @@
-# PDF Summariser
+# PDF Summariser 🤖🇦🇮📖
+
 
 ## Description  
 **PDF Summariser** a pour objectif de résumer des fichiers PDF. L'application permet d'insérer des fichiers PDF, qui seront résumés en un maximum de 1400 mots, selon le choix de l'utilisateur. En outre, elle offre la possibilité de traduire les résumés en français, anglais ou allemand.
