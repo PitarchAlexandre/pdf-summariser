@@ -1,4 +1,4 @@
-# PDF Summariser  🤖🇦🇮📖
+# PDF Summariser  🤖📖
 
 [Le README en français juste ici!](README.fr.md)
 
