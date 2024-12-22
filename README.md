@@ -1,6 +1,6 @@
 # PDF Summariser  🤖🇦🇮📖
 
-[Le README en français juste ici!](README.en.md)
+[Le README en français juste ici!](README.fr.md)
 
 ## Description  
 **PDF Summariser** is designed to summarize PDF files. The application lets you insert PDF files, which will be summarized in a maximum of 1400 words, according to the user's choice. It also offers the option of translating summaries into French, English or German.
