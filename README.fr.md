@@ -20,6 +20,18 @@
 
 ---
 
+## Demo
+
+![Demo d'un résumé en français](Demo/PDF-Summariser-demo.gif)
+
+![Demo d'un résumé en anglais](Demo/PDF-Summariser-demo-ollama.gif)
+
+![Demo d'un résumé en allemand](Demo/PDF-Summariser-demo-deutsch.gif)
+
+![Thème clair/sombre](Demo/PDF-Summariser-demo-themes.gif)
+
+---
+
 ## Apprentissage :  
 Ce projet m’a permis d’approfondir mes connaissances sur différents aspects :  
 1. **Manipulation des modèles IA** : J'ai appris à manipuler des modèles IA ainsi que de  

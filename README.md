@@ -21,6 +21,18 @@
 
 ---
 
+## Demo
+
+![French text summary demo](Demo/PDF-Summariser-demo.gif)
+
+![English text summary demo](Demo/PDF-Summariser-demo-ollama.gif)
+
+![German text summary demo](Demo/PDF-Summariser-demo-deutsch.gif)
+
+![Theme light/dark](Demo/PDF-Summariser-demo-themes.gif)
+
+---
+
 ## Learning:  
 This project has enabled me to deepen my knowledge on various aspects:  
 1. **AI model manipulation**: I learned how to manipulate AI models, as well as how to use them.  
