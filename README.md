@@ -85,6 +85,8 @@ You can also insert other IA templates, but you'll need to consult their officia
 
 ## Problems encountered:  
 - Language changes may not work correctly depending on the AI model selected.
+- Some AI models may have difficulty translating text.
+- If you use Ollama models locally, loading times may vary, depending on the processor you're using.
 
 ---
 
