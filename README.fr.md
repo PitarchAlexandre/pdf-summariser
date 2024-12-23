@@ -68,7 +68,7 @@ Vous pouvez également insérer d'autres modèles IA, mais il est nécessaire de
 ---
 
 ## Problèmes rencontrés :  
-- Les changements de langue et les modifications des modèles IA ne fonctionnent parfois pas correctement selon le modèle IA choisi.
+- Les changements de langue ne fonctionnent parfois pas correctement selon le modèle IA choisi.
 
 ---
 
