@@ -72,7 +72,7 @@ You can also insert other IA templates, but you'll need to consult their officia
 ---
 
 ## Problems encountered:  
-- Language changes and AI template modifications may not work correctly depending on the AI model selected.
+- Language changes may not work correctly depending on the AI model selected.
 
 ---
 
