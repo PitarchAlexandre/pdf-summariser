@@ -21,7 +21,7 @@
 
 ---
 
-## Demo
+# Demo
 
 ![French text summary demo](Demo/PDF-Summariser-demo.gif)
 
