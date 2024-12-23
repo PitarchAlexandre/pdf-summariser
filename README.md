@@ -96,10 +96,10 @@ You can also insert other IA templates, but you'll need to consult their officia
 ---
 
 ## What could be improved :  
-- **AI template management interface**: A window for viewing and configuring all AI templates and their settings.  
+- **AI template management interface** : A window for viewing and configuring all AI templates and their settings.  
 - Resolution of the above-mentioned bug.  
-- **Summary storage**: Enable summaries to be stored for easy access in the future.  
-- OCR support for PDF files**: The current library does not support scanned PDFs.  
+- **Summary storage** : Enable summaries to be stored for easy access in the future.  
+- **OCR support for PDF files** : The current library does not support scanned PDFs.  
 - Add the ability to read Word and OCR files.
 
 ---
@@ -110,9 +110,17 @@ The procedural code is available in the pdf-summariser-procedural folder.
 ---
 
 ## Conclusion : 
-Despite the fact that the application needs a few optimizations (which I won't have time to modify because of school, I have projects to hand in and exams to do), I'm very satisfied with the skills I've acquired, particularly in AI and the use of InstallForge. InstallForge has also enabled me to indirectly understand some very interesting system concepts that I didn't know before. I'm also glad I used Ttkboostrap for the frontend, as I already like and use this frontend for websites, even if I much prefer to use it in HTML, as I don't find the structure any better in HTML than in Python.
+Despite the fact that the application needs a few optimizations (which I won't have time to modify because of school, I have projects to hand in and exams to do), I'm very satisfied with the skills I've acquired, particularly in AI and the use of InstallForge. InstallForge has also enabled me to indirectly understand some very interesting system concepts that I didn't know before. I'm also glad I used Ttkboostrap for the frontend, as I already like and use this frontend for websites, even if I much prefer to use it in HTML, as I find the structure better in HTML than in Python.
+
+---
+
+## Thanks
+Thanks to David De Groote, who gave us a very interesting seminar on AI at the "École d'Informatique de Gestion" in Delémont (School of Business Information Technology or School of Business Informatics, in english according to deepl and chatgpt). Thanks to this course, I was able to realize this project. His GitBook is available in the links below.
+
+---
 
 ## Links :
+- [Installation Package OpenAI - ESIG](https://esig.degroote.ch/mardi-3-decembre-2024/pratique-api/installation-package-openai-et-test)
 - [OpenAI API Documentation](https://platform.openai.com/docs/api-reference/introduction)
 - [OpenAI Overview](https://platform.openai.com/docs/overview)
 - [openai-python GitHub Repository](https://github.com/openai/openai-python)
