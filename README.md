@@ -9,15 +9,15 @@
 
 ## Application
 
--**Download the installer**(Installer_PDF_Summariser.exe) and install the application to test it.
+-**Download the installer** (Installer_PDF_Summariser.exe) and install the application to test it.
 
 ---
 
 ## Features :  
-- PDF file summary**: Summarizes PDF files according to user preferences (up to 1400 words).  
-- Multilingual translation**: Translation of summaries into French, English or German.  
-- IA template storage** : IA templates are stored in JSON format within the application.  
-- Themes** : The application can be in a light or dark theme.  
+- **PDF file summary** : Summarizes PDF files according to user preferences (up to 1400 words).  
+- **Multilingual translation** : Translation of summaries into French, English or German.  
+- **IA template storage** : IA templates are stored in JSON format within the application.  
+- **Themes** : The application can be in a light or dark theme.  
 
 ---
 
@@ -25,11 +25,19 @@
 
 ![French text summary demo](Demo/PDF-Summariser-demo.gif)
 
+French summary demo
+
 ![English text summary demo](Demo/PDF-Summariser-demo-ollama.gif)
+
+English summary demo
 
 ![German text summary demo](Demo/PDF-Summariser-demo-deutsch.gif)
 
+German summary demo
+
 ![Theme light/dark](Demo/PDF-Summariser-demo-themes.gif)
+
+Demonstration of light/dark theme
 
 ---
 
@@ -40,9 +48,6 @@ This project has enabled me to deepen my knowledge on various aspects:
 3. **Multilingual translation**: Learned translation techniques in French, English and German.  
 4. **Data storage and management**: Use of JSON formats to store and manipulate data.  
 5. User interface with Tkinter**: Create a user-friendly graphical interface with **Tkinter** and *Tkinter**.
-
-Translated with DeepL.com (free version)
-
 6. **Object-oriented programming (OOP)**: Using OOP to structure code in a more modular and extensible way.  
 7. **Application installer**: Use of **InstallForge** to facilitate deployment. 
 
