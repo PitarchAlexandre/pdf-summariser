@@ -110,6 +110,6 @@ Malgré que l’application mérite quelque optimisations (que je n’aurais pas
 - [Close a Tkinter Window with a Button - GeeksforGeeks](https://www.geeksforgeeks.org/how-to-close-a-tkinter-window-with-a-button/)
 - [Switch between Dark and Light ttk Theme - Stack Overflow](https://stackoverflow.com/questions/66576662/how-to-switch-between-dark-and-light-ttk-theme)
 - [Tkinter Separator - Python Tutorial](https://www.pythontutorial.net/tkinter/tkinter-separator/)
-- [Tkinter Anchors - TutorialsPoint](https://www.tutorialspoint.com/python/tk_anchors.htm
+- [Tkinter Anchors - TutorialsPoint](https://www.tutorialspoint.com/python/tk_anchors.htm)
 - [Tkinter ttk Documentation](https://docs.python.org/fr/3.13/library/tkinter.ttk.html)
 - Logo Source: [Livres - Flaticon](https://www.flaticon.com/fr/chercher?word=livre)
