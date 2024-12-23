@@ -20,15 +20,19 @@
 
 ---
 
-## Demo
+# Demo
 
 ![Demo d'un résumé en français](Demo/PDF-Summariser-demo.gif)
+Résumé en français
 
 ![Demo d'un résumé en anglais](Demo/PDF-Summariser-demo-ollama.gif)
+Résumé en anglais
 
 ![Demo d'un résumé en allemand](Demo/PDF-Summariser-demo-deutsch.gif)
+Résumé en allemand
 
 ![Thème clair/sombre](Demo/PDF-Summariser-demo-themes.gif)
+Démonstration thème clair/sombre
 
 ---
 
@@ -92,9 +96,11 @@ Vous pouvez également insérer d'autres modèles IA, mais il est nécessaire de
 - Ajouter la possibilité pour la lecture des fichiers Word et OCR.
 
 ---
+
 ## A noter :
 Au début, le code était en procédural et le modèle était stocké dans un .env, car je ne savais pas trop où j’allais et je testais. Ensuite, j’ai décidé de passer à une approche orientée objet lorsque j’ai vu que j’allais un peu plus loin. Cela permet d’avoir un code plus modulable et extensible. Je pourrais par exemple facilement ajouter des fonctionnalités supplémentaires. D’ailleurs, je ne pense pas modifier le code prochainement, mais si je le fais, j’envisage à l’avenir d’ajouter des fonctionnalités telles que la lecture de fichiers Word et la prise en charge de PDF OCR. J’aimerais également rajouter quelques fenêtres supplémentaires ainsi que quelques contrôles utilisateur.
-Le code en procédural est disponible dans le dossier pdf-summariser-procedural.
+Certains modèles d'IA peuvent rencontrer des difficultés à traduire les textes. 
+Si vous utilisez les modèles Ollama en local, le temps de chargement peut varier, notamment en fonction du processeur que vous utilisez.
 
 ---
 
