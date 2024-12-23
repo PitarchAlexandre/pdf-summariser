@@ -23,15 +23,19 @@
 # Demo
 
 ![Demo d'un résumé en français](Demo/PDF-Summariser-demo.gif)
-Résumé en français
+
+Démo d'un résumé en français
 
 ![Demo d'un résumé en anglais](Demo/PDF-Summariser-demo-ollama.gif)
-Résumé en anglais
+
+Démo d'un résumé en anglais
 
 ![Demo d'un résumé en allemand](Demo/PDF-Summariser-demo-deutsch.gif)
-Résumé en allemand
+
+Démo d'un résumé en allemand
 
 ![Thème clair/sombre](Demo/PDF-Summariser-demo-themes.gif)
+
 Démonstration thème clair/sombre
 
 ---
