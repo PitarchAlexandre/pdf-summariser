@@ -8,7 +8,7 @@
 
 ## Application
 
--**Téléchargez l'installeur**(Installer_PDF_Summariser.exe) et installer l'application pour la tester.
+- **Téléchargez l'installeur** (Installer_PDF_Summariser.exe) et installer l'application pour la tester.
 
 ---
 
