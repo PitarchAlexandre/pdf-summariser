@@ -109,11 +109,17 @@ Au début, le code était en procédural et le modèle était stocké dans un .e
 ---
 
 ## Conclusion :  
-Malgré que l’application mérite quelque optimisations (que je n’aurais pas le temps de modifier à cause de l’école, j’ai des projets à rendre et des examens à faire), je suis très satisfait des compétences acquises, particulièrement en IA et l'utilisation InstallForge. InstallForge m'a en plus permis de comprendre indirectement quelques concepts systèmes très interessant que je ne connaissais pas encore. Je suis aussi content d'avoir utilisé Ttkboostrap pour faire le frontend, car j'aime et utilise déjà ce frontend pour les sites webs, même si je préfère largement l'utiliser en HTML, car je ne trouve la structure meilleure en HTML comparé à Python.
+Malgré que l’application mérite quelque optimisations (que je n’aurais pas le temps de modifier à cause de l’école, j’ai des projets à rendre et des examens à faire), je suis très satisfait des compétences acquises, particulièrement en IA et l'utilisation InstallForge. InstallForge m'a en plus permis de comprendre indirectement quelques concepts systèmes très interessant que je ne connaissais pas encore. Je suis aussi content d'avoir utilisé Ttkboostrap pour faire le frontend, car j'aime et utilise déjà ce frontend pour les sites webs, même si je préfère largement l'utiliser en HTML, car je trouve la structure meilleure en HTML comparé à Python.
+
+--
+
+## Remerciements
+Merci à David De Groote, qui nous a donné un séminaire très intéressant sur l'IA à l'École d'Informatique de Gestion de Delémont. Grâce à ce cours, j'ai pu réaliser ce projet. Son GitBook est disponible dans les liens ci-dessous.
 
 --
 
 ## Liens :
+- [Installation Package OpenAI - ESIG](https://esig.degroote.ch/mardi-3-decembre-2024/pratique-api/installation-package-openai-et-test)
 - [OpenAI API Documentation](https://platform.openai.com/docs/api-reference/introduction)
 - [OpenAI Overview](https://platform.openai.com/docs/overview)
 - [openai-python GitHub Repository](https://github.com/openai/openai-python)
