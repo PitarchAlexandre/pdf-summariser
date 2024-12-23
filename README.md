@@ -113,6 +113,5 @@ Despite the fact that the application needs a few optimizations (which I won't h
 - [Switch between Dark and Light ttk Theme - Stack Overflow](https://stackoverflow.com/questions/66576662/how-to-switch-between-dark-and-light-ttk-theme)
 - [Tkinter Separator - Python Tutorial](https://www.pythontutorial.net/tkinter/tkinter-separator/)
 - [Tkinter Anchors - TutorialsPoint](https://www.tutorialspoint.com/python/tk_anchors.htm)
-- [Installation Package OpenAI - ESIG](https://esig.degroote.ch/mardi-3-decembre-2024/pratique-api/installation-package-openai-et-test)
 - [Tkinter ttk Documentation](https://docs.python.org/fr/3.13/library/tkinter.ttk.html)
 - Logo Source: [Livres - Flaticon](https://www.flaticon.com/fr/chercher?word=livre)
