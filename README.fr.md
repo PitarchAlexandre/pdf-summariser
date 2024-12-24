@@ -100,6 +100,7 @@ Vous pouvez également insérer d'autres modèles IA, mais il est nécessaire de
 - **Conservation des résumés** : Permettre de stocker les résumés pour un accès facile à l’avenir.  
 - **Prise en charge OCR pour les fichiers PDF** : La bibliothèque actuelle ne supporte pas les PDF scannés.  
 - Ajouter la possibilité pour la lecture des fichiers Word et OCR.
+- Ajouter une requête **asynchrone** pour afficher le résumé de manière incrémentale, de sorte qu'une partie du texte soit affichée avant même que le résumé ne soit terminé, ce qui permet à l'utilisateur de commencer à lire sans attendre.
 
 ---
 
