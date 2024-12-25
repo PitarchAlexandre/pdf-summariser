@@ -9,7 +9,7 @@
 
 ## Application
 
--**Download the installer** (Installer_PDF_Summariser.exe) and install the application to test it.
+- **Download the installer** (Installer_PDF_Summariser.exe) and install the application to test it.
 
 ---
 
