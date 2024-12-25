@@ -100,6 +100,7 @@ You can also insert other IA templates, but you'll need to consult their officia
 - **Summary storage** : Enable summaries to be stored for easy access in the future.  
 - **OCR support for PDF files** : The current library does not support scanned PDFs.  
 - Add the ability to read Word and OCR files.
+- Add a GUI in English and German.
 - Add an **asynchronous** request to display the summary incrementally, so part of the text is shown even before the summarization is complete, allowing the user to start reading without waiting.
 
 ---
