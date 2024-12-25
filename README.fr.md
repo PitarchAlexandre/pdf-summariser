@@ -42,15 +42,14 @@ Démonstration thème clair/sombre
 
 ## Apprentissage :  
 Ce projet m’a permis d’approfondir mes connaissances sur différents aspects :  
-1. **Manipulation des modèles IA** : J'ai appris à manipuler des modèles IA ainsi que de  
+1. **Manipulation des modèles IA** : J'ai appris à manipuler des modèles IA pour réaliser des tâches précises.
 2. **Manipulation des fichiers en Python** : Exploration et gestion des fichiers PDF, avec compréhension approfondie des données.  
-3. **Traduction multilingue** : Apprentissage des techniques de traduction en français, anglais et allemand.  
-4. **Stockage et gestion des données** : Utilisation de formats JSON pour stocker et manipuler les données.  
-5. **Interface utilisateur avec Tkinter** : Création d’une interface graphique conviviale avec **Tkinter** et **Ttkbootstrap**.  
-6. **Programmation orientée objet (POO)** : Utilisation de la POO pour structurer le code de manière plus modulaire et extensible.  
-7. **Installeur d’application** : Utilisation de **InstallForge** pour faciliter le déploiement. 
+3. **Stockage et gestion des données** : Utilisation de formats JSON pour stocker et manipuler les données.  
+4. **Interface utilisateur avec Tkinter** : Création d’une interface graphique conviviale avec **Tkinter** et **Ttkbootstrap**.  
+5. **Programmation orientée objet (POO)** : Utilisation de la POO pour structurer le code de manière plus modulaire et extensible.  
+6. **Installeur d’application** : Utilisation de **InstallForge** pour faciliter le déploiement. 
 
-**L’objectif principal** était d’accroître mes connaissances sur les modèles IA, leurs différentes marques et modèles (benchmark).
+**L’objectif principal** était d’accroître mes connaissances sur les modèles IA, leurs différentes marques et modèles (benchmark) et d'être capable de les manipuler afin de réaliser des tâches précises.
 
 ---
 
@@ -99,8 +98,10 @@ Vous pouvez également insérer d'autres modèles IA, mais il est nécessaire de
 - Résolution du bogue mentionné précédemment.  
 - **Conservation des résumés** : Permettre de stocker les résumés pour un accès facile à l’avenir.  
 - **Prise en charge OCR pour les fichiers PDF** : La bibliothèque actuelle ne supporte pas les PDF scannés.  
-- Ajouter la possibilité pour la lecture des fichiers Word et OCR.
+- Ajouter la possibilité pour la lecture des fichiers **Word** et **OCR**.
+- Ajouter une interface graphique en anglais et en allemand
 - Ajouter une requête **asynchrone** pour afficher le résumé de manière incrémentale, de sorte qu'une partie du texte soit affichée avant même que le résumé ne soit terminé, ce qui permet à l'utilisateur de commencer à lire sans attendre.
+- Ajouter un tuto pour l'utilisateur.
 
 ---
 
