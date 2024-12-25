@@ -43,13 +43,12 @@ Demonstration of light/dark theme
 
 ## Learning:  
 This project has enabled me to deepen my knowledge on various aspects:  
-1. **AI model manipulation**: I learned how to manipulate AI models, as well as how to use them.  
-2. **File manipulation in Python**: Exploration and management of PDF files, with in-depth understanding of the data.  
-3. **Multilingual translation**: Learned translation techniques in French, English and German.  
-4. **Data storage and management**: Use of JSON formats to store and manipulate data.  
-5. User interface with Tkinter**: Create a user-friendly graphical interface with **Tkinter** and *Tkinter**.
-6. **Object-oriented programming (OOP)**: Using OOP to structure code in a more modular and extensible way.  
-7. **Application installer**: Use of **InstallForge** to facilitate deployment. 
+1. **AI model manipulation** : I learned how to manipulate AI models, as well as how to use them.  
+2. **File manipulation in Python** : Exploration and management of PDF files, with in-depth understanding of the data.   
+3. **Data storage and management** : Use of JSON formats to store and manipulate data.  
+4. User interface with Tkinter** : Create a user-friendly graphical interface with **Tkinter** and *Tkinter**.
+5. **Object-oriented programming (OOP)** : Using OOP to structure code in a more modular and extensible way.  
+6. **Application installer**: Use of **InstallForge** to facilitate deployment. 
 
 **The main objective** was to increase my knowledge of AI models, their different brands and models (benchmark).
 
@@ -61,25 +60,25 @@ This project has enabled me to deepen my knowledge on various aspects:
 #### Please note:  
 To use the Llama 3.2 model, you need to have downloaded **Ollama** locally, otherwise the model won't work.  
 
-- API KEY** : `ollama` (must be filled in, but is not used directly in the code)  
-- Template name**: `llama3.2` (for example)  
-- Base URL**: `http://localhost:11434/v1`
+- **API KEY** : `ollama` (must be filled in, but is not used directly in the code)  
+- **Template name**: `llama3.2` (for example)  
+- **Base URL**: `http://localhost:11434/v1`
 
 ---
 
 ### Google:  
 You can use a free **Gemini** key, available at [https://ai.google.dev/](https://ai.google.dev/).  
-- API KEY** : your API key  
-- Model name** : `gemini-1.5-flash` (for example)  
-- Base URL**: `https://generativelanguage.googleapis.com/v1beta/openai/`
+- **API KEY** : your API key  
+- **Model name** : `gemini-1.5-flash` (for example)  
+- **Base URL**: `https://generativelanguage.googleapis.com/v1beta/openai/`
 
 ---
 
 ### OpenAI:  
 You need to get a key from [https://platform.openai.com/api-keys](https://platform.openai.com/api-keys).
-- API KEY** : your API key  
-- Model name** : `gpt-4o-mini` (for example)  
-- Base URL** : leave empty  
+- **API KEY** : your API key  
+- **Model name** : `gpt-4o-mini` (for example)  
+- **Base URL** : leave empty  
 
 ---
 
