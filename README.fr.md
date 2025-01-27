@@ -72,6 +72,7 @@ Vous pouvez utiliser une clé **Gemini** gratuite, disponible sur [https://ai.go
 - **Base URL** : `https://generativelanguage.googleapis.com/v1beta/openai/`
 
 **Note** : Il est préférable d'utiliser le modèle `gemini-1.5-flash` plutôt que le modèle `gemini-1.5-flash-8b`, car ce dernier rencontre des difficultés à traduire les textes.
+
 ---
 
 ### OpenAI :  
