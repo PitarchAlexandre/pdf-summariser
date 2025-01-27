@@ -68,9 +68,10 @@ Pour l'utilisation du modèle Llama 3.2, il faut avoir téléchargé **Ollama** 
 ### Google :  
 Vous pouvez utiliser une clé **Gemini** gratuite, disponible sur [https://ai.google.dev/](https://ai.google.dev/).  
 - **API KEY** : votre clé API  
-- **Nom du modèle** : `gemini-1.5-flash` (par exemple)  
+- **Nom du modèle**  : `gemini-1.5-flash` (par exemple)  
 - **Base URL** : `https://generativelanguage.googleapis.com/v1beta/openai/`
 
+**Note** : Il est préférable d'utiliser le modèle `gemini-1.5-flash` plutôt que le modèle `gemini-1.5-flash-8b`, car ce dernier rencontre des difficultés à traduire les textes.
 ---
 
 ### OpenAI :  
