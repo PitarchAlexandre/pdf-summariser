@@ -206,18 +206,13 @@ def on_button_click():
     
     prompt = ia_client.parameter_prompt(number_max_word, pdf_text, language)
 
-    summary = ia_client.generate_summary(client, ai_model, prompt)
-    print(len(summary))
-    print(summary)
-    for su in summary:
-        print(su + "\n")
     # Show the text inn the text zone
-        text_box.insert("1.0", su)
+    ia_client.generate_summary(client, ai_model, prompt, text_box)
 
-# Bouton pour sélectionner un fichier PDF et générer le résumé
+# Button to select a PDF file and generate the summary
 ttk.Button(button_chose_pdf, text="Sélectionner fichier PDF", bootstyle=SUCCESS, command=on_button_click).pack(padx=10, pady=10)
 
-# Cadre pour le bouton "Cancel"
+# Frame for “Cancel” button
 button_frame = ttk.Frame(app)
 button_frame.pack(pady=10, padx=10, fill=X, anchor=S) #anchor=S to position the button at the bottom 
 ttk.Button(button_frame, text="Quitter", bootstyle=DANGER, command=app.quit).pack(side=RIGHT, padx=50, pady=10)

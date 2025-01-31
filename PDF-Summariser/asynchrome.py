@@ -1,14 +1,22 @@
-import asyncio
+import threading
 
-async def my_task(name):
-    print(f"Task {name} started")
-    await asyncio.sleep(2)
-    print(f"Task {name} completed")
 
-async def main():
-    task1 = asyncio.create_task(my_task("A"))
-    task2 = asyncio.create_task(my_task("B"))
-    await task1
-    await task2
+def print_cube(num):
+    print("Cube: {}" .format(num * num * num))
 
-asyncio.run(main())
+
+def print_square(num):
+    print("Square: {}" .format(num * num))
+
+
+if __name__ =="__main__":
+    t1 = threading.Thread(target=print_square, args=(10,))
+    t2 = threading.Thread(target=print_cube, args=(10,))
+
+    t1.start()
+    t2.start()
+
+    t1.join()
+    t2.join()
+
+    print("Done!")

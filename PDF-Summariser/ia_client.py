@@ -1,5 +1,6 @@
 from openai import OpenAI
 from tkinter import messagebox
+import tkinter as tk
 #https://platform.openai.com/docs/api-reference/introduction
 #https://platform.openai.com/docs/overview
 #https://github.com/openai/openai-python
@@ -39,7 +40,8 @@ class IAClient:
         ]
         return prompt
 
-    def generate_summary(self, client, ia_model, prompt):
+
+    def generate_summary(self, client, ia_model, prompt, text_box):
         stream = client.chat.completions.create(
                     model=ia_model,
                     messages=prompt,
@@ -47,12 +49,16 @@ class IAClient:
                     #max_tokens=1000,
                     stream=True,
         )
-        summary = []
+        summary = ''
         for chunk in stream:
             if chunk.choices[0].delta.content is not None:
-                print(chunk.choices[0].delta.content, end="")
-                summary.append(chunk.choices[0].delta.content)
-        
+                text_part = chunk.choices[0].delta.content
+                # Add text into the textbox
+                text_box.insert(tk.END, text_part)
+                # Refresh the textbox 
+                text_box.update()
+                summary += text_part
+                
         if not summary:
             messagebox.showerror("Error", "L'application n'a pas pu traiter de document.")
             return None
