@@ -199,7 +199,6 @@ def on_button_click():
     # Ask to the user the number maximum of words he wants in his summary
     number_max_word = PdfFile.max_word()
     
-
     # Create an object of IAClient with the information configurations
     ia_client = IAClient(api_key, base_url, language)
     # Create and configure the api_key and url of the bot
@@ -208,9 +207,12 @@ def on_button_click():
     prompt = ia_client.parameter_prompt(number_max_word, pdf_text, language)
 
     summary = ia_client.generate_summary(client, ai_model, prompt)
-    
+    print(len(summary))
+    print(summary)
+    for su in summary:
+        print(su + "\n")
     # Show the text inn the text zone
-    text_box.insert("1.0", summary)
+        text_box.insert("1.0", su)
 
 # Bouton pour sélectionner un fichier PDF et générer le résumé
 ttk.Button(button_chose_pdf, text="Sélectionner fichier PDF", bootstyle=SUCCESS, command=on_button_click).pack(padx=10, pady=10)

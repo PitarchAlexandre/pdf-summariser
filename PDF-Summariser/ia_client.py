@@ -47,11 +47,11 @@ class IAClient:
                     #max_tokens=1000,
                     stream=True,
         )
-        summary = ""
+        summary = []
         for chunk in stream:
             if chunk.choices[0].delta.content is not None:
                 print(chunk.choices[0].delta.content, end="")
-                summary+=chunk.choices[0].delta.content
+                summary.append(chunk.choices[0].delta.content)
         
         if not summary:
             messagebox.showerror("Error", "L'application n'a pas pu traiter de document.")
