@@ -4,10 +4,14 @@ import tkinter as tk
 from tkinter import filedialog
 from pypdf import PdfReader
 from tkinter import simpledialog
+from PyPDF2 import PdfFileReader
+import ocrmypdf
 #https://docs.python.org/3/library/tkinter.messagebox.html
 #https://github.com/py-pdf/pypdf
 #https://pdfreader.readthedocs.io/en/latest/tutorial.html
 #https://courspython.com/classes-et-objets.html
+#https://datacorner.fr/pdf/
+#https://jonathansoma.com/everything/pdfs/ocr-tools/
     
 class PdfFile():
     def __init__(self):
@@ -30,6 +34,16 @@ class PdfFile():
         for p in page:
             text = p.extract_text()
             document+=text
+        # If the document is empty, the pdf is readen with an OCR reader
+        # Unfortunalty, this OCR reader barely works... But it's free! 
+        output_pdf = ""
+        
+        if document == "":
+            try:
+                ocrmypdf.ocr(pdf_file, output_pdf, language="fra", deskew=True)
+                print(f"OCR terminé ! PDF enregistré sous : {output_pdf}")
+            except Exception as e:
+                print(f"Erreur lors de l'OCR : {e}")
         return document
     
     @staticmethod
