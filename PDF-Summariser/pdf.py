@@ -5,27 +5,53 @@ from tkinter import filedialog
 from pypdf import PdfReader
 from tkinter import simpledialog
 from PyPDF2 import PdfFileReader
+from config_ocr import OcrConfig
 import ocrmypdf
+import requests
+
 #https://docs.python.org/3/library/tkinter.messagebox.html
 #https://github.com/py-pdf/pypdf
 #https://pdfreader.readthedocs.io/en/latest/tutorial.html
 #https://courspython.com/classes-et-objets.html
 #https://datacorner.fr/pdf/
 #https://jonathansoma.com/everything/pdfs/ocr-tools/
+#https://ocr.space/ocrapi 
+#https://www.docstring.fr/formations/faq/fichiers/comment-manipuler-des-fichiers-json-en-python/
     
 class PdfFile():
-    def __init__(self):
-        pass
-    
+
     # Open the file explorateur to choose a PDF file
     @staticmethod
     def select_pdf_file():
         pdf_file = filedialog.askopenfilename(initialdir = "/", title = "Select file", filetypes = (("pdf files", "*.pdf"), ("all files", "*.*")))
         return pdf_file
     
+    # Convert the pdfile in txt file with an OCR
+    @staticmethod
+    def convert_ocr_text(pdf_file, language):
+        # Get the api key from the json file (config_ocr.json)
+        print("Function ocr to text")
+        api_key = OcrConfig("config_ocr.json").get_default_key
+
+        try:
+            payload = {'isOverlayRequired': True,
+                    'apikey': 'api_key',
+                    'language': language,
+                    }
+            with open(pdf_file, 'rb') as f:
+                r = requests.post('https://api.ocr.space/parse/image',
+                                files={pdf_file: f},
+                                data=payload,
+                                )
+            r.content.decode()
+            if r.content.decode() == ''
+        except Exception as e:
+            print(f"Erreur : {e}")
+        
+
     # Convert the pdf file in txt file
     @staticmethod
-    def convert_pdf_text(pdf_file):
+    def convert_pdf_text(pdf_file, langague):
         if not pdf_file:
             raise ValueError("Aucun fichier PDF selectionnné.")
         reader = PdfReader(pdf_file)
@@ -34,16 +60,16 @@ class PdfFile():
         for p in page:
             text = p.extract_text()
             document+=text
-        # If the document is empty, the pdf is readen with an OCR reader
-        # Unfortunalty, this OCR reader barely works... But it's free! 
-        output_pdf = ""
         
+        # If the document is empty, the pdf is readen with an OCR reader 
         if document == "":
             try:
-                ocrmypdf.ocr(pdf_file, output_pdf, language="fra", deskew=True)
-                print(f"OCR terminé ! PDF enregistré sous : {output_pdf}")
+                # in pyhton, you have to write the class name + the function to call a function into the fucntion
+                document = PdfFile.convert_ocr_text(pdf_file, langague)
+                print(f"OCR terminé ! Le texte du pdf contient : \n {document}")
             except Exception as e:
                 print(f"Erreur lors de l'OCR : {e}")
+
         return document
     
     @staticmethod

@@ -164,10 +164,13 @@ def on_button_click():
     language = combobox_language.get()
     if language == "français":
         language = "french"
+        lang_ocr = "fre"
     elif language == "english":
         language = "english"
+        lang_ocr = "eng"
     elif language == "deutsch":
         language = "german"
+        lang_ocr = "ger"
     else:
         messagebox.showerror("Error", "Vous de devez choisir une langue.")
         return
@@ -194,7 +197,7 @@ def on_button_click():
 
     # Loads the PdfFile
     pdf_file_selected = PdfFile.select_pdf_file()
-    pdf_text = PdfFile.convert_pdf_text(pdf_file_selected)
+    pdf_text = PdfFile.convert_pdf_text(pdf_file_selected, lang_ocr)
 
     # Ask to the user the number maximum of words he wants in his summary
     number_max_word = PdfFile.max_word()
