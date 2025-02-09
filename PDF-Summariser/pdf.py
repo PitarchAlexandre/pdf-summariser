@@ -19,6 +19,7 @@ import os
 #https://docs.aspose.com/pdf/python-net/optimize-pdf/#reduce-size-pdf
 #https://vitalflux.com/python-tesseract-pdf-ocr-example/
 #https://stackoverflow.com/questions/50951955/pytesseract-tesseractnotfound-error-tesseract-is-not-installed-or-its-not-i
+#https://github.com/oschwartz10612/poppler-windows/releases/tag/v24.08.0-0
 
 class PdfFile():
 
