@@ -29,4 +29,4 @@ class OcrConfig():
         try:
             return self.config_path["api_keys_ocr"][0]
         except (KeyError, IndexError):
-            raise ValueError("La clé 'model_config' est invalide ou vide dans le fichier de configuration.")
+            raise ValueError("La clé 'api_keys_ocr' est invalide ou vide dans le fichier de configuration.")

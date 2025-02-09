@@ -160,6 +160,7 @@ text_box = ttk.Text(resume_frame, height=20, width=70)
 text_box.pack(fill=BOTH, expand=True, padx=45, pady=20)
 
 # Fonction which works when the summerize button is pressed
+# the lang_ocr variable exist because it is how ocr.space API find the languages
 def on_button_click():
     language = combobox_language.get()
     if language == "français":

@@ -9,6 +9,7 @@ from config_ocr import OcrConfig
 import ocrmypdf
 import requests
 import aspose.pdf as ap
+import pytesseract
 
 #https://docs.python.org/3/library/tkinter.messagebox.html
 #https://github.com/py-pdf/pypdf
@@ -33,28 +34,14 @@ class PdfFile():
     def convert_ocr_text(pdf_file, language):
         # Get the api key from the json file (config_ocr.json)
         print("Function ocr to text")
-        api_key = OcrConfig("config_ocr.json").get_default_key
+        api_key_ocr = OcrConfig("config_ocr.json")
+        api_key = api_key_ocr.get_default_key()
         print(api_key)
 
         try:
-            # Open document
-            document = ap.Document(pdf_file)
-            # Optimize PDF document. Note, though, that this method cannot guarantee document shrinking
-            document.optimize_resources()
-            # Initialize OptimizationOptions
-            optimizeOptions = ap.optimization.OptimizationOptions()
-            # Set CompressImages option
-            optimizeOptions.image_compression_options.compress_images = True
-            # Set ImageQuality option
-            optimizeOptions.image_compression_options.image_quality = 50
-            # Optimize PDF document using OptimizationOptions
-            document.optimize_resources(optimizeOptions)
-            # Save updated document
-            document.save(pdf_file)
-
-
+            
             payload = {'isOverlayRequired': False,
-                    'apikey': 'helloworld',
+                    'apikey': api_key,
                     'language': language,
                     }
             with open(pdf_file, 'rb') as f:
@@ -63,12 +50,9 @@ class PdfFile():
                                 data=payload,
                                 )
             r.content.decode()
-            print(r.json)
+            print(r.content.decode())
 
-            if r.content.decode() == 'The API key is invalid':
-                renderer = ChromePdfRenderer()
-                pdf_file = renderer.RenderUrlAsPdf(pdf_file)
-                
+            if r.content.decode() == 'The API key is invalid' or r.content.decode() == None:
                 payload = {'isOverlayRequired': False,
                     'apikey': 'helloworld',
                     'language': language,
@@ -78,6 +62,7 @@ class PdfFile():
                                 files={pdf_file: f},
                                 data=payload,
                                 )
+                print(r.content.decode())
                 return r.content.decode()
             else:
                 return r.content.decode()
@@ -103,7 +88,11 @@ class PdfFile():
             try:
                 # in pyhton, you have to write the class name + the function to call a function into the fucntion
                 document = PdfFile.convert_ocr_text(pdf_file, langague)
-                print(f"OCR terminé ! Le texte du pdf contient : \n {document}")
+                print(f"L'OCR terminé. \n")
+                if document == None:
+                    print("Le document est vide. Il y a probablement eu une erreur.")
+                else:
+                    print(f"Le texte du pdf contient : \n {document}")
             except Exception as e:
                 print(f"Erreur lors de l'OCR : {e}")
 
@@ -114,13 +103,13 @@ class PdfFile():
         tk.messagebox.showwarning(title="Infos", message="Les fichiers doivent contenir un maximum de 1400 mots")
         try:
             warning_message = ""
-            while False:
+            while True:
                 # l'avantage de la fonction askinteger, c'est qu'elle controle directement que le nombre soit un int et évite les mauvaises entrées
                 number_max_word = simpledialog.askinteger(title="Nombre de mots", prompt=f"{warning_message}Inserérez le nombre maximum de mots du résumé : ")
                 if number_max_word >= 0 and number_max_word <= 1400:   
                     return number_max_word
                 else:
-                    warning_message += "Entrez un nombre entre 0 et 1400.\n"
+                    warning_message = "Entrez un nombre entre 0 et 1400.\n"
                     True
         except ValueError as e:
             print(f"An error occured: {e}. La valeur inséré n'est pas valide.")
