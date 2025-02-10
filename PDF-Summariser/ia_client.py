@@ -65,7 +65,3 @@ class IAClient:
             return None
         else:
            return summary
-
-
-
-

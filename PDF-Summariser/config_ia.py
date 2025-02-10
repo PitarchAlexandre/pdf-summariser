@@ -4,10 +4,6 @@ import json
 # https://www.geeksforgeeks.org/append-to-json-file-using-python/
 # https://youtube.com/watch?v=wfopJdI_cFo
 
-# This file takes the data from the json file "config.json".
-# Whith this class can add, delete and select a AI model.
-# It can also save and update the configuration of the model.
-
 class ConfigManager:
     def __init__(self, config_path):
         self.config_path = config_path

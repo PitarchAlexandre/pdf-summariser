@@ -4,12 +4,13 @@ import tkinter as tk
 from tkinter import filedialog
 from pypdf import PdfReader
 from tkinter import simpledialog
-from PyPDF2 import PdfFileReader
-from config_ocr import OcrConfig
-import ocrmypdf
-import requests
-import aspose.pdf as ap
 import pytesseract
+from pdf2image import convert_from_path
+import os
+import threading
+import time
+from concurrent.futures import ThreadPoolExecutor
+from tkinter import ttk
 
 #https://docs.python.org/3/library/tkinter.messagebox.html
 #https://github.com/py-pdf/pypdf
@@ -20,6 +21,11 @@ import pytesseract
 #https://ocr.space/ocrapi 
 #https://www.docstring.fr/formations/faq/fichiers/comment-manipuler-des-fichiers-json-en-python/
 #https://docs.aspose.com/pdf/python-net/optimize-pdf/#reduce-size-pdf
+#https://vitalflux.com/python-tesseract-pdf-ocr-example/
+#https://stackoverflow.com/questions/50951955/pytesseract-tesseractnotfound-error-tesseract-is-not-installed-or-its-not-i
+#https://github.com/oschwartz10612/poppler-windows/releases/tag/v24.08.0-0
+#https://github.com/tesseract-ocr/tesseract/blob/main/doc/tesseract.1.asc#options
+#https://tesseract-ocr.github.io/tessdoc/Command-Line-Usage
 
 class PdfFile():
 
@@ -28,52 +34,75 @@ class PdfFile():
     def select_pdf_file():
         pdf_file = filedialog.askopenfilename(initialdir = "/", title = "Select file", filetypes = (("pdf files", "*.pdf"), ("all files", "*.*")))
         return pdf_file
-    
-    # Convert the pdfile in txt file with an OCR
+
+    @staticmethod
+    def warning_msg_ocr():
+        tk.messagebox.showwarning(title="In process", message="Les lectures de fichiers OCR peuvent prendre plus de temps.\n"
+                                  + "Votre fichier PDF a probablement été scanné. C'est pour cela que cette opération risque"
+                                  + "de prendre du temps.\nLe programme doit convertir les images en texte.")
+
     @staticmethod
     def convert_ocr_text(pdf_file, language):
-        # Get the api key from the json file (config_ocr.json)
-        print("Function ocr to text")
-        api_key_ocr = OcrConfig("config_ocr.json")
-        api_key = api_key_ocr.get_default_key()
-        print(api_key)
+        text_data = ''
+
+        time.sleep(1)
+
+        script_dir = os.path.dirname(os.path.abspath(__file__))  
+        tesseract_path = os.path.join(script_dir, "Tesseract-OCR", "tesseract.exe")
+        poppler_path = os.path.join(script_dir, "poppler-24.08.0", "Library", "bin")
+
+        print(poppler_path)
+
+        pytesseract.pytesseract.tesseract_cmd = tesseract_path
+
+        os.environ["PATH"] += os.pathsep + poppler_path  
+
+        # The dpi is on 300dpi by default, but to optimize and make it run faster, it is on 100 dpi
+        # The default format is png but to put it in jpeg, it makes it faster.
+        pages = convert_from_path(pdf_file, dpi=100, fmt="jpeg", poppler_path=poppler_path)
+        text_data = ''
 
         try:
-            
-            payload = {'isOverlayRequired': False,
-                    'apikey': api_key,
-                    'language': language,
-                    }
-            with open(pdf_file, 'rb') as f:
-                r = requests.post('https://api.ocr.space/parse/image',
-                                files={pdf_file: f},
-                                data=payload,
-                                )
-            r.content.decode()
-            print(r.content.decode())
+            # Use multithread to run faster
+            with ThreadPoolExecutor(max_workers=4) as executor:
+                #https://tesseract-ocr.github.io/tessdoc/Command-Line-Usage
+                #https://pyimagesearch.com/2021/11/15/tesseract-page-segmentation-modes-psms-explained-how-to-improve-your-ocr-accuracy/
+                ocr_config = '--oem 3 --psm 6'
+                # this line is mostly made with chatgpt
+                # Lambda function: for each page in 'pages', apply Tesseract OCR to extract text
+                text_data = list(executor.map(lambda page: pytesseract.image_to_string(page, lang=language, config=ocr_config), pages))
 
-            if r.content.decode() == 'The API key is invalid' or r.content.decode() == None:
-                payload = {'isOverlayRequired': False,
-                    'apikey': 'helloworld',
-                    'language': language,
-                    }
-                with open(pdf_file, 'rb') as f:
-                    r = requests.post('https://api.ocr.space/parse/image',
-                                files={pdf_file: f},
-                                data=payload,
-                                )
-                print(r.content.decode())
-                return r.content.decode()
-            else:
-                return r.content.decode()
-            
-        except Exception as e:
-            print(f"Erreur : {e}")
+            if not text_data:
+                tk.messagebox.showerror(title="Error", message="Erreur {text}")
+            return text_data
         
+        except Exception as e:
+            tk.messagebox.showerror(title="Error", message="Erreur {e}")
+            print(f"Erreur : {e}")
 
+    # Convert the pdfile in txt file with an OCR
+    @staticmethod
+    def get_ocr_text(pdf_file, language):
+        
+        progressbar = ttk.Progressbar(mode="indeterminate")
+        progressbar.place(x=30, y=60, width=200)
+        # Start moving the indeterminate progress bar.
+        progressbar.start(5)
+        
+        PdfFile.warning_msg_ocr()
+        
+        with ThreadPoolExecutor() as executor:
+            future = executor.submit(PdfFile.convert_ocr_text, pdf_file, language)
+            result = future.result()
+        
+        progressbar.after(3000, progressbar.destroy)
+
+        return result
+        
+        
     # Convert the pdf file in txt file
     @staticmethod
-    def convert_pdf_text(pdf_file, langague):
+    def convert_pdf_text(pdf_file, language):
         if not pdf_file:
             raise ValueError("Aucun fichier PDF selectionnné.")
         reader = PdfReader(pdf_file)
@@ -87,7 +116,7 @@ class PdfFile():
         if document == "":
             try:
                 # in pyhton, you have to write the class name + the function to call a function into the fucntion
-                document = PdfFile.convert_ocr_text(pdf_file, langague)
+                document = PdfFile.get_ocr_text(pdf_file,language)
                 print(f"L'OCR terminé. \n")
                 if document == None:
                     print("Le document est vide. Il y a probablement eu une erreur.")

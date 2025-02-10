@@ -160,18 +160,17 @@ text_box = ttk.Text(resume_frame, height=20, width=70)
 text_box.pack(fill=BOTH, expand=True, padx=45, pady=20)
 
 # Fonction which works when the summerize button is pressed
-# the lang_ocr variable exist because it is how ocr.space API find the languages
 def on_button_click():
     language = combobox_language.get()
     if language == "français":
         language = "french"
-        lang_ocr = "fre"
+        lang = "fra"
     elif language == "english":
         language = "english"
-        lang_ocr = "eng"
+        lang = "eng"
     elif language == "deutsch":
         language = "german"
-        lang_ocr = "ger"
+        lang = "deu"
     else:
         messagebox.showerror("Error", "Vous de devez choisir une langue.")
         return
@@ -198,7 +197,7 @@ def on_button_click():
 
     # Loads the PdfFile
     pdf_file_selected = PdfFile.select_pdf_file()
-    pdf_text = PdfFile.convert_pdf_text(pdf_file_selected, lang_ocr)
+    pdf_text = PdfFile.convert_pdf_text(pdf_file_selected, lang)
 
     # Ask to the user the number maximum of words he wants in his summary
     number_max_word = PdfFile.max_word()
@@ -213,10 +212,10 @@ def on_button_click():
     # Show the text inn the text zone
     ia_client.generate_summary(client, ai_model, prompt, text_box)
 
-# Button to select a PDF file and generate the summary
+# Bouton pour sélectionner un fichier PDF et générer le résumé
 ttk.Button(button_chose_pdf, text="Sélectionner fichier PDF", bootstyle=SUCCESS, command=on_button_click).pack(padx=10, pady=10)
 
-# Frame for “Cancel” button
+# Cadre pour le bouton "Cancel"
 button_frame = ttk.Frame(app)
 button_frame.pack(pady=10, padx=10, fill=X, anchor=S) #anchor=S to position the button at the bottom 
 ttk.Button(button_frame, text="Quitter", bootstyle=DANGER, command=app.quit).pack(side=RIGHT, padx=50, pady=10)
