@@ -9,11 +9,6 @@
       "api_key": "ollama",
       "model": "phi4-mini",
       "base_url": "http://localhost:11434/v1"
-    },
-    {
-      "api_key": "AIzaSyDl59DHeAiS07Z6g9tn-avjH_gxtsInhJg",
-      "model": "gemini-2.5-flash",
-      "base_url": "https://generativelanguage.googleapis.com/v1beta/openai/"
     }
   ]
 }
