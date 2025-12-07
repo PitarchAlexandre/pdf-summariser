@@ -6,16 +6,11 @@
 
 **PDF Summariser** is designed to summarize PDF files. The application lets you insert PDF files, which will be summarized in a maximum of 1400 words, according to the user's choice. It also offers the option of translating summaries into French, English or German.
 
-The generated summary can be saved as a DOC or TXT file.
-The application also includes a chatbot that can answer questions about the provided PDF and its generated summary.
-
-### [Project Installation for Development here](#project-installation-for-development)
-
 ---
 
 ## Application
 
-- **Download the installer** **Téléchargez l'installeur** [here with this link to Google Drive](https://drive.google.com/file/d/1BBQ5qoO_sjPhNBxgeVlztx5BLySdJlAA/view?usp=sharing) and install the application to test it.
+- **Download the installer** (Installer_PDF_Summariser.exe) and install the application to test it.
 
 ---
 
@@ -23,44 +18,26 @@ The application also includes a chatbot that can answer questions about the prov
 
 - **PDF file summary** : Summarizes PDF files according to user preferences (up to 1400 words).
 - **Multilingual translation** : Translation of summaries into French, English or German.
-- **Integrated chatbot** : Allows asking questions about the PDF content and its summary for interactive exploration.
-- **Summary export** : Save summaries in DOC (Word) or TXT formats for easy storage and sharing.
-- **IA template storage** : IA models are stored and configured in JSON format within the application, supporting multiple providers (OpenAI, Google Gemini, Ollama, etc.).
-- **Light and dark themes** : The interface offers customizable light and dark modes for optimal viewing comfort.
-- **User-friendly interface** : Built with Tkinter and ttkbootstrap for a simple and pleasant user experience.
-- **Easy installation** : Distributed via a Windows installer (.exe) created with InstallForge.
-- **Automatic download of Ollama template**: if a local Ollama template is selected, the application automatically downloads and installs the required template.
+- **IA template storage** : IA templates are stored in JSON format within the application.
+- **Themes** : The application can be in a light or dark theme.
 
 ---
 
 # Demo
 
-![French text summary demo](/doc/demo/resume-fr.gif/)
+![French text summary demo](Demo/PDF-Summariser-demo.gif)
 
 French summary demo
 
-![English text summary demo](/doc/demo/resume-en.gif)
+![English text summary demo](Demo/PDF-Summariser-demo-ollama.gif)
 
 English summary demo
 
-![German text summary demo](/doc/archives/Demo/PDF-Summariser-demo-deutsch.gif)
+![German text summary demo](Demo/PDF-Summariser-demo-deutsch.gif)
 
-German summary demo (with the 1.0 version of PDF Summerasier)
+German summary demo
 
-![Sumbot text summary demo](/doc/demo/sumbot-en.gif)
-
-Demo of the chatbot answering questions based on the summarized PDF content.  
-The bot helps explore the document interactively by responding to user queries.
-
-![Save a summary as txt](/doc/demo/download-txt.gif)
-
-Save a summary in txt format
-
-![Save a summary as doc](/doc/demo/download-doc.gif)
-
-Save a summary in doc format
-
-![Theme light/dark](/doc/demo/themes.gif)
+![Theme light/dark](Demo/PDF-Summariser-demo-themes.gif)
 
 Demonstration of light/dark theme
 
@@ -73,7 +50,7 @@ This project has enabled me to deepen my knowledge on various aspects:
 1. **AI model manipulation** : I learned how to manipulate AI models, as well as how to use them.
 2. **File manipulation in Python** : Exploration and management of PDF files, with in-depth understanding of the data.
 3. **Data storage and management** : Use of JSON formats to store and manipulate data.
-4. **User interface with Tkinter** : Create a user-friendly graphical interface with **Tkinter** and \*Tkinter\*\*.
+4. User interface with Tkinter** : Create a user-friendly graphical interface with **Tkinter** and \*Tkinter**.
 5. **Object-oriented programming (OOP)** : Using OOP to structure code in a more modular and extensible way.
 6. **Application installer**: Use of **InstallForge** to facilitate deployment.
 
@@ -119,52 +96,38 @@ You need to get a key from [https://platform.openai.com/api-keys](https://platfo
 
 You can also insert other IA templates, but you'll need to consult their official documentation to find out how to configure their API keys and URL bases.
 
-# Project Installation for Development
+---
 
-## 1. Create and activate a virtual environment
+## Problems encountered:
 
-```bash
-python -m venv .venv
-```
+- Language changes may not work correctly depending on the AI model selected.
+- Some AI models may have difficulty translating text.
+- If you use Ollama models locally, loading times may vary, depending on the processor you're using.
 
-Then activate the virtual environment
+---
 
-On Windows :
+## What could be improved :
 
-```bash
-python -m venv .venv
-.\.venv\Scripts\activate
-```
+- **AI template management interface** : A window for viewing and configuring all AI templates and their settings.
+- Resolution of the above-mentioned bug.
+- **Summary storage** : Enable summaries to be stored for easy access in the future.
+- **OCR support for PDF files** : The current library does not support scanned PDFs.
+- Add the ability to read Word and OCR files.
+- Add a GUI in English and German.
+- Add an **asynchronous** request to display the summary incrementally, so part of the text is shown even before the summarization is complete, allowing the user to start reading without waiting.
 
-On Linux :
+---
 
-```bash
-python3 -m venv .venv
-source .venv/bin/activate
-```
+## Please note:
 
-## 2. Install Python dependencies
+At first, the code was procedural and the template was stored in an .env, as I wasn't sure where I was going and was testing. Then I decided to switch to an object-oriented approach when I saw that I was going a bit further. This meant that the code was more modular and extensible. For example, I could easily add extra functionality. In fact, I don't think I'll be modifying the code any time soon, but if I do, I plan to add features such as Word file reading and PDF OCR support in the future. I'd also like to add a few more windows and some user controls.
+The procedural code is available in the pdf-summariser-procedural folder.
 
-```bash
-pip install -r requirements.txt
-```
+---
 
-## 3. Install external tools
+## Conclusion :
 
-The project requires three external tools:
-
-- **Ollama**
-- **Poppler**
-- **Tesseract-OCR**
-
-You have two options:
-
-1. **Install them directly on your PC** (classic method)
-2. **OR** place them **inside the project folders**, as in the packaged (.exe) version,  
-   and follow the instructions provided in each dedicated README.
-
-If you install the tools on your system, **nothing else needs to be done**.  
-If you prefer to include them in the project, you must follow the setup instructions found in the corresponding directories.
+Despite the fact that the application needs a few optimizations (which I won't have time to modify because of school, I have projects to hand in and exams to do), I'm very satisfied with the skills I've acquired, particularly in AI and the use of InstallForge. InstallForge has also enabled me to indirectly understand some very interesting system concepts that I didn't know before. I'm also glad I used Ttkboostrap for the frontend, as I already like and use this frontend for websites, even if I much prefer to use it in HTML, as I find the structure better in HTML than in Python.
 
 ---
 
