@@ -13,7 +13,7 @@ L’application inclut également un chatbot capable de répondre aux questions 
 
 ---
 
-## Application
+## Télécharger l'application
 
 - **Téléchargez l'installeur** [ici depuis le lien Google Drive](https://drive.google.com/file/d/1BBQ5qoO_sjPhNBxgeVlztx5BLySdJlAA/view?usp=sharing) et installer l'application pour la tester.
 
